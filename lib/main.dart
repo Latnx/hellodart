@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   print("aaaaa");
   argument();
@@ -6,7 +8,9 @@ void main() {
   print('Hello, World!');
   var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
   voyager.describe();
-
+  var now =new DateTime.now();
+  print(now);
+  print(now.millisecondsSinceEpoch);
   var voyager3 = Spacecraft.unlaunched('Voyager III');
   voyager3.describe();
 }
