@@ -82,11 +82,13 @@ Future<void> createDescriptions(Iterable<String> objects) async {
   for (final object in objects) {
     try {
       var file = File('$object.txt');
+      // await 判断文件是否存在
       if (await file.exists()) {
         var modified = await file.lastModified();
         print('File for $object already exists. It was modified on $modified.');
         continue;
       }
+      // 创建文件
       await file.create();
       await file.writeAsString('Start describing $object in this file.');
     } on IOException catch (e) {
@@ -96,13 +98,12 @@ Future<void> createDescriptions(Iterable<String> objects) async {
 }
 
 // 异常
-Except() async {
+Except(Iterable<String> flybyObjects) async {
   // throw 关键字抛出一个异常
   var astronauts = 1;
   if (astronauts == 0) {
     throw StateError('No astronauts.');
   }
-  var flybyObjects = [1, 2, 3];
   // try 捕获一个异常:
   try {
     for (final object in flybyObjects) {
@@ -134,5 +135,7 @@ void main() {
   var voyager3 = Spacecraft.unlaunched('Voyager III');
   voyager3.describe();
 
-  Except();
+  createDescriptions({"test1"," test2"});
+
+  Except({"test1"," test2"});
 }
