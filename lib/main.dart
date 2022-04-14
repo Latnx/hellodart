@@ -113,7 +113,6 @@ Except(Iterable<String> flybyObjects) async {
   } on IOException catch (e) {
     print('Could not describe object: $e');
   } finally {
-    flybyObjects.clear();
   }
 }
 
