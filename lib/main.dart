@@ -134,7 +134,7 @@ void main() {
   var voyager3 = Spacecraft.unlaunched('Voyager III');
   voyager3.describe();
 
-  createDescriptions({"test1"," test2"});
+  createDescriptions({"test1","test2"});
 
-  Except({"test1"," test2"});
+  Except({".\\test1",".\\test2"});
 }
