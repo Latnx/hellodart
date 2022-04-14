@@ -1,6 +1,5 @@
 //导入 'math'库
 import 'dart:io';
-import 'dart:math';
 
 void argument() {
   // 变量
